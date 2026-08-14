@@ -174,7 +174,7 @@ Actual Healthy       108        7
 
 Actual Parkinson's    6       106
 
-## 🚀 Future Enhancements
+## **🚀 Future Enhancements**
 
 - Real-time voice analysis
 - Larger and more diverse datasets
@@ -185,11 +185,11 @@ Actual Parkinson's    6       106
 - Improved prediction accuracy
 - Real-time prediction and reporting
 
-## ⚠️ Disclaimer
+## **⚠️ Disclaimer**
 
 This project is developed for **academic and research purposes only** and is **not a replacement for professional medical diagnosis or clinical evaluation**.
 
-## 👩‍💻 Author
+## **👩‍💻 Author**
 
 **Arshiya Nasirin**  
 B.E. CSE – Artificial Intelligence & Machine Learning

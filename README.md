@@ -347,33 +347,9 @@ The frontend is deployed using Vercel.
 
 **Live Website:**
 
-https://parkinson-s-disease-detection-puce.vercel.app/
+https://parkinson-s-disease-detection-brvc.vercel.app/
 
 > The AI prediction functionality requires the backend API to be deployed and connected to the frontend.
-
----
-
-# 📸 Screenshots
-
-Screenshots can be added to the `screenshots` folder.
-
-### 🏠 Home Page
-
-![Home Page](screenshots/home.png)
-
-### 🎙️ Voice Upload
-
-![Voice Upload](screenshots/upload.png)
-
-### 📊 Prediction Result
-
-![Prediction Result](screenshots/prediction.png)
-
-### 🤖 Virtual Robotic Assistant
-
-![Virtual Assistant](screenshots/assistant.png)
-
-> Replace the image filenames above with your actual screenshots.
 
 ---
 

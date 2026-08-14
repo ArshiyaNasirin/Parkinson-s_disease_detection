@@ -158,13 +158,13 @@ This project focuses on voice signals because voice recording provides a **non-i
 
 The trained **CNN + Bidirectional LSTM** model was evaluated using the test dataset.
 
-## 🎯 Test Accuracy
+## **🎯 Test Accuracy**
 
 **94.27%**
 
 The model achieved an overall test accuracy of **94.27%**, showing strong classification performance on the evaluated voice dataset.
 
-## 📊 Confusion Matrix
+## **📊 Confusion Matrix**
 
 ```text
                     Predicted
@@ -192,6 +192,6 @@ This project is developed for **academic and research purposes only** and is **n
 ## **👩‍💻 Author**
 
 **Arshiya Nasirin**  
-B.E. CSE – Artificial Intelligence & Machine Learning
+**B.E. CSE – Artificial Intelligence & Machine Learning**
 
-⭐ If you find this project useful, consider starring the repository!
+⭐ **If you find this project useful, consider starring the repository!**

@@ -1,125 +1,197 @@
-# 🧠 Parkinson's Disease Detection Using Voice Signals
+# 🧠 Explainable Deep Learning-Based Parkinson's Disease Detection with Virtual Robotic Assistance Using Voice Signals
 
-An AI-based system for detecting Parkinson's disease from voice recordings using **MFCC features and a CNN + Bidirectional LSTM deep learning model**.
+## 📌 Project Overview
 
-## 🎯 Objectives
+This project is an AI-based system developed to detect Parkinson's disease from human voice recordings using **Deep Learning and Audio Signal Processing**.
 
-- Detect Parkinson's disease from voice signals.
-- Extract audio features using MFCC.
-- Classify voice as Healthy or Parkinson's.
-- Provide prediction confidence.
-- Support Explainable AI using SHAP/LIME.
-- Provide a Virtual Robotic Assistant.
-- Provide a web-based interface.
+The system takes a voice recording as input, extracts meaningful audio features using **Mel-Frequency Cepstral Coefficients (MFCC)**, and uses a hybrid **Convolutional Neural Network (CNN) + Bidirectional Long Short-Term Memory (BiLSTM)** model to classify the voice signal as:
 
-## 🔄 Workflow
+- Healthy
+- Parkinson's
+
+The project also incorporates **Explainable Artificial Intelligence (XAI)** using **SHAP and LIME** to improve the interpretability of the model's predictions.
+
+A **Virtual Robotic Assistant** is also included as part of the proposed system to provide an interactive and user-friendly experience.
+
+> ⚠️ This project is developed for academic and research purposes only. It is not intended to replace professional medical diagnosis or clinical evaluation.
+
+---
+
+# 🎯 Objectives
+
+The main objectives of this project are:
+
+- To detect Parkinson's disease using voice signals.
+- To preprocess and analyze human voice recordings.
+- To extract useful audio features using MFCC.
+- To develop a CNN + Bidirectional LSTM deep learning model.
+- To classify voice recordings as Healthy or Parkinson's.
+- To provide prediction confidence.
+- To integrate Explainable AI techniques.
+- To understand the factors contributing to model predictions.
+- To provide a Virtual Robotic Assistant.
+- To develop a user-friendly web interface.
+- To provide an AI-assisted prediction and reporting system.
+
+---
+
+# 💡 Problem Statement
+
+Parkinson's disease is a progressive neurological disorder that can affect speech and voice characteristics.
+
+Changes in voice characteristics may contain useful information that can be analyzed using Artificial Intelligence and Machine Learning techniques.
+
+This project explores a **voice-based AI approach** for identifying patterns associated with Parkinson's disease.
+
+The system processes voice recordings, extracts MFCC features, and uses a deep learning model to classify the input into Healthy or Parkinson's.
+
+The objective is to develop an academic research prototype that demonstrates how voice signal processing and deep learning can be combined for healthcare-related applications.
+
+---
+
+# 🎤 Why Voice Signals?
+
+Parkinson's disease can affect several characteristics of human speech and voice.
+
+Possible changes may include:
+
+- Pitch variation
+- Vocal stability
+- Frequency characteristics
+- Voice intensity
+- Speech timing
+- Acoustic characteristics
+- Other voice-related patterns
+
+Voice signals can therefore be processed into numerical representations and analyzed using deep learning models.
+
+This project focuses on voice signals because voice recording provides a **non-invasive and accessible input method** for research.
+
+---
+
+# 🏗️ Overall System Architecture
 
 ```text
-Voice Recording / Upload
-          ↓
-Audio Preprocessing
-          ↓
-MFCC Feature Extraction
-          ↓
-CNN + Bidirectional LSTM
-          ↓
-Healthy / Parkinson's
-          ↓
-Confidence Score
-          ↓
-Explainable AI
-          ↓
-Virtual Assistant / Report
+                           USER
+                            │
+                            ▼
+               ┌────────────────────────┐
+               │ Voice Recording /       │
+               │ Audio File Upload       │
+               └────────────┬───────────┘
+                            │
+                            ▼
+               ┌────────────────────────┐
+               │ Frontend Web Interface │
+               │ HTML / CSS / JavaScript │
+               └────────────┬───────────┘
+                            │
+                       HTTP Request
+                            │
+                            ▼
+               ┌────────────────────────┐
+               │ Flask Backend API      │
+               └────────────┬───────────┘
+                            │
+                            ▼
+               ┌────────────────────────┐
+               │ Audio Preprocessing    │
+               └────────────┬───────────┘
+                            │
+                            ▼
+               ┌────────────────────────┐
+               │ MFCC Feature Extraction│
+               └────────────┬───────────┘
+                            │
+                            ▼
+               ┌────────────────────────┐
+               │ Feature Preparation    │
+               └────────────┬───────────┘
+                            │
+                            ▼
+               ┌────────────────────────┐
+               │ CNN Feature Extraction │
+               └────────────┬───────────┘
+                            │
+                            ▼
+               ┌────────────────────────┐
+               │ Bidirectional LSTM     │
+               │ Sequence Learning      │
+               └────────────┬───────────┘
+                            │
+                            ▼
+               ┌────────────────────────┐
+               │ Classification Layer   │
+               └────────────┬───────────┘
+                            │
+                       ┌────┴────┐
+                       ▼         ▼
+                   HEALTHY   PARKINSON'S
+                       │         │
+                       └────┬────┘
+                            ▼
+               ┌────────────────────────┐
+               │ Prediction + Confidence│
+               └────────────┬───────────┘
+                            │
+                  ┌─────────┴──────────┐
+                  ▼                    ▼
+          ┌───────────────┐    ┌────────────────┐
+          │ Explainable AI│    │ Virtual Robotic│
+          │ SHAP / LIME   │    │ Assistant      │
+          └───────┬───────┘    └───────┬────────┘
+                  │                    │
+                  └─────────┬──────────┘
+                            ▼
+               ┌────────────────────────┐
+               │ Result Display         │
+               │ Prediction             │
+               │ Confidence             │
+               │ Explanation            │
+               └────────────┬───────────┘
+                            │
+                            ▼
+               ┌────────────────────────┐
+               │ Report Generation      │
+               └────────────────────────┘
+# 📈 Model Performance and Accuracy
 
-📊 Dataset
-Class	Recordings
-Healthy	574
-Parkinson's	560
-Total	1,134
+The trained **CNN + Bidirectional LSTM** model was evaluated using the test dataset.
 
-Audio configuration:
+## 🎯 Test Accuracy
 
-Sample Rate: 22050 Hz
-MFCC Coefficients: 40
-Maximum Time Frames: 162
-🧠 Model
+**94.27%**
 
-CNN + Bidirectional LSTM
+The model achieved an overall test accuracy of **94.27%**, showing strong classification performance on the evaluated voice dataset.
 
-CNN extracts important audio patterns.
-BiLSTM learns sequential voice patterns.
-Final layer classifies Healthy/Parkinson's.
-Performance
+## 📊 Confusion Matrix
 
-Test Accuracy: 94.27%
+```text
+                    Predicted
+                 Healthy  Parkinson's
 
-Confusion Matrix:
+Actual Healthy       108        7
 
-                 Predicted
-              Healthy  Parkinson's
-Healthy          108       7
-Parkinson's       6      106
-🔍 Explainable AI
+Actual Parkinson's    6       106
 
-The project uses:
+## 🚀 Future Enhancements
 
-SHAP – feature contribution analysis
-LIME – individual prediction explanation
-🛠️ Technologies Used
+- Real-time voice analysis
+- Larger and more diverse datasets
+- Improved Explainable AI (XAI) visualization
+- Cloud deployment
+- Mobile application
+- Multilingual Virtual Robotic Assistant
+- Improved prediction accuracy
+- Real-time prediction and reporting
 
-Languages: Python, HTML, CSS, JavaScript
+## ⚠️ Disclaimer
 
-AI/ML: TensorFlow, Keras, CNN, BiLSTM, Scikit-learn
+This project is developed for **academic and research purposes only** and is **not a replacement for professional medical diagnosis or clinical evaluation**.
 
-Audio: Librosa, MFCC
+## 👩‍💻 Author
 
-Data: NumPy, Pandas
-
-Backend: Flask
-
-XAI: SHAP, LIME
-
-Tools: VS Code, Git, GitHub
-
-📂 Project Structure
-Parkinson's_disease_detection/
-├── backend/
-├── frontend/
-├── check_audio.py
-├── extract_features.py
-├── prepare_audio_data.py
-├── record_and_predict.py
-├── train_cnn_lstm.py
-├── voice_prediction.py
-├── parkinsons detection.py
-├── start_app.bat
-├── .gitignore
-└── README.md
-⚙️ Installation
-git clone https://github.com/ArshiyaNasirin/Parkinson-s_disease_detection.git
-cd Parkinson-s_disease_detection
-python -m venv venv
-venv\Scripts\activate
-
-Install the required Python packages according to the project environment.
-
-🚀 Future Enhancements
-Real-time voice analysis
-Larger datasets
-Improved XAI visualization
-Cloud deployment
-Mobile application
-Multilingual virtual assistant
-⚠️ Disclaimer
-
-This project is developed for academic and research purposes and is not a replacement for professional medical diagnosis.
-
-👩‍💻 Author
-
-Arshiya Nasirin
+**Arshiya Nasirin**  
 B.E. CSE – Artificial Intelligence & Machine Learning
 
 ⭐ If you find this project useful, consider starring the repository!
-
-
-

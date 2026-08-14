@@ -158,7 +158,7 @@ This project focuses on voice signals because voice recording provides a **non-i
 
 The trained **CNN + Bidirectional LSTM** model was evaluated using the test dataset.
 
-## **🎯 Test Accuracy**
+# 🎯 Test Accuracy
 
 **94.27%**
 
